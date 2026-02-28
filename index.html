@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche GT4 RS Experience</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div class="container">
+    <div class="blur-overlay" id="blurOverlay"></div>
+
+    <!-- Tire marks canvas-style divs -->
+    <div class="tire-marks" id="tireMarks"></div>
+
+    <!-- Smoke -->
+    <div class="smoke-container" id="smokeContainer"></div>
+
+    <!-- Car -->
+    <div class="car-wrapper" id="carWrapper">
+        <img src="https://a.storyblok.com/f/322327/2616x712/e030f0d430/cm24n3jix0001-718-cayman-gt-4-rs-side.png/m/1800x490/smart/filters:format(avif)" alt="Porsche GT4 RS">
+    </div>
+
+    <!-- Start button -->
+    <div class="start-button" id="startButton">
+        <button onclick="startEngine()">ENGINE START</button>
+    </div>
+    <!-- audio sound -->
+    <audio id="engineSound" preload="auto">
+    <source src="car start.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Info blocks (2x2 grid, smaller) -->
+    <div class="info-blocks" id="infoBlocks">
+        <div class="info-block" onclick="openOverlay(0)">
+            <h2>Performance</h2>
+            <p>Naturally aspirated 4.0L flat-six engine delivering pure racing DNA</p>
+            <div class="stat">500 HP</div>
+        </div>
+        <div class="info-block" onclick="openOverlay(1)">
+            <h2>Speed</h2>
+            <p>Acceleration that pins you to your seat with relentless force</p>
+            <div class="stat">0-60 in 3.2s</div>
+        </div>
+        <div class="info-block" onclick="openOverlay(2)">
+            <h2>Track Ready</h2>
+            <p>Advanced aerodynamics and race-proven chassis technology</p>
+            <div class="stat">196 MPH</div>
+        </div>
+        <div class="info-block" onclick="openOverlay(3)">
+            <h2>Precision</h2>
+            <p>Every component engineered for ultimate driving precision</p>
+            <div class="stat">9,000 RPM</div>
+        </div>
+    </div>
+
+    <!-- Fullscreen detail overlay -->
+    <div class="fullscreen-overlay" id="fullscreenOverlay">
+        <div class="fs-backdrop" onclick="closeOverlay()"></div>
+        <div class="fs-content" id="fsContent">
+            <!-- filled by JS -->
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+    
+
+</body>
+</html>
