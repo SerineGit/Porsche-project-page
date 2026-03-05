@@ -3,70 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porsche GT4 RS Experience</title>
-
+    <title>Porsche QA Project</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-<div class="container">
+
+<!-- ===== HERO SECTION (машина + запуск) ===== -->
+<section class="hero" id="heroSection">
+    <div class="hero-bg-grid"></div>
     <div class="blur-overlay" id="blurOverlay"></div>
-
-    <!-- Tire marks canvas-style divs -->
     <div class="tire-marks" id="tireMarks"></div>
-
-    <!-- Smoke -->
     <div class="smoke-container" id="smokeContainer"></div>
 
-    <!-- Car -->
     <div class="car-wrapper" id="carWrapper">
         <img src="https://a.storyblok.com/f/322327/2616x712/e030f0d430/cm24n3jix0001-718-cayman-gt-4-rs-side.png/m/1800x490/smart/filters:format(avif)" alt="Porsche GT4 RS">
     </div>
 
-    <!-- Start button -->
+    <div class="hero-title" id="heroTitle">
+        <span class="hero-label">Quality Assurance Project</span>
+        <h1>PORSCHE<br><em>TESTING</em></h1>
+    </div>
+
     <div class="start-button" id="startButton">
-        <button onclick="startEngine()">ENGINE START</button>
+        <button onclick="startEngine()">
+            <span class="btn-icon">▶</span> RUN TESTS
+        </button>
     </div>
-    <!-- audio sound -->
+
+    <div class="scroll-hint" id="scrollHint">
+        <span>SCROLL DOWN</span>
+        <div class="scroll-arrow"></div>
+    </div>
+
     <audio id="engineSound" preload="auto">
-    <source src="car start.mp3" type="audio/mpeg">
+        <source src="car start.mp3" type="audio/mpeg">
     </audio>
+</section>
 
-    <!-- Info blocks (2x2 grid, smaller) -->
-    <div class="info-blocks" id="infoBlocks">
-        <div class="info-block" onclick="openOverlay(0)">
-            <h2>Performance</h2>
-            <p>Naturally aspirated 4.0L flat-six engine delivering pure racing DNA</p>
-            <div class="stat">500 HP</div>
-        </div>
-        <div class="info-block" onclick="openOverlay(1)">
-            <h2>Speed</h2>
-            <p>Acceleration that pins you to your seat with relentless force</p>
-            <div class="stat">0-60 in 3.2s</div>
-        </div>
-        <div class="info-block" onclick="openOverlay(2)">
-            <h2>Track Ready</h2>
-            <p>Advanced aerodynamics and race-proven chassis technology</p>
-            <div class="stat">196 MPH</div>
-        </div>
-        <div class="info-block" onclick="openOverlay(3)">
-            <h2>Precision</h2>
-            <p>Every component engineered for ultimate driving precision</p>
-            <div class="stat">9,000 RPM</div>
+<!-- ===== ABOUT PROJECT ===== -->
+<section class="content-section" id="aboutSection">
+    <div class="section-inner">
+        <div class="section-tag">01 — ABOUT</div>
+        <h2 class="section-title">About the Project</h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>Like Porsche's legendary <strong>flat-six</strong> engine — precise, naturally aspirated, and built to last — our QA framework delivers performance without compromise.</p>
+                <p>From the <strong>Zuffenhausen</strong> workshop to the digital track, we cover every layer: FE automation like a <strong>PDK gearbox</strong> (fast, seamless), API testing with the precision of <strong>PASM</strong>, and security checks with the vigilance of <strong>PCM</strong>.</p>
+                <p>Our test suites run from Weissach to production — every lap time measured, every anomaly flagged.</p>
+                <div class="about-links">
+                    <a href="https://newsroom.porsche.com/en/2025/company/porsche-bug-bounty-programme-round-three-40219.html" target="_blank" class="about-link">
+                        <span>🔐</span> Bug Bounty Program
+                    </a>
+                    <a href="https://www.porsche.com/international/information-security/" target="_blank" class="about-link">
+                        <span>🛡️</span> Security Reporting
+                    </a>
+                    <a href="https://newsroom.porsche.com/en/sustainability/porsche-digital-trust-center/ethical-hacker-program-reporting-policy.html" target="_blank" class="about-link">
+                        <span>⚡</span> Ethical Hacker Policy
+                    </a>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">POM Coverage</div></div>
+                <div class="stat-card"><div class="stat-num">7+</div><div class="stat-label">Projects Tested</div></div>
+                <div class="stat-card"><div class="stat-num">11</div><div class="stat-label">Team Members</div></div>
+                <div class="stat-card"><div class="stat-num">0</div><div class="stat-label">Bugs Past Finish</div></div>
+            </div>
         </div>
     </div>
+</section>
 
-    <!-- Fullscreen detail overlay -->
-    <div class="fullscreen-overlay" id="fullscreenOverlay">
-        <div class="fs-backdrop" onclick="closeOverlay()"></div>
-        <div class="fs-content" id="fsContent">
-            <!-- filled by JS -->
+<!-- ===== TECH STACK ===== -->
+<section class="content-section dark" id="techSection">
+    <div class="section-inner">
+        <div class="section-tag">02 — TECHNOLOGY</div>
+        <h2 class="section-title">Tech Stack</h2>
+        <div class="tech-grid">
+            <div class="tech-block">
+                <div class="tech-block-icon">🔩</div>
+                <h3>Automation Engine</h3>
+                <ul>
+                    <li>Selenium WebDriver</li>
+                    <li>Python + UnitTest / PyTest</li>
+                    <li>Shadow DOM & iFrame</li>
+                    <li>Page Object Model</li>
+                </ul>
+            </div>
+            <div class="tech-block">
+                <div class="tech-block-icon">⚡</div>
+                <h3>API — Sport Chrono</h3>
+                <ul>
+                    <li>Postman Collections</li>
+                    <li>Newman CLI</li>
+                    <li>JavaScript Automation</li>
+                    <li>Auth & Security Tests</li>
+                </ul>
+            </div>
+            <div class="tech-block">
+                <div class="tech-block-icon">🏁</div>
+                <h3>Infrastructure — GT3 RS</h3>
+                <ul>
+                    <li>GitHub Actions CI/CD</li>
+                    <li>HTML & Allure Reporting</li>
+                    <li>Cross-Browser Coverage</li>
+                    <li>Performance & Load Tests</li>
+                </ul>
+            </div>
+        </div>
+        <div class="badge-row">
+            <span class="badge python">Python 3.9+</span>
+            <span class="badge selenium">Selenium 4.0+</span>
+            <span class="badge postman">Postman</span>
+            <span class="badge gh">GitHub Actions</span>
+            <span class="badge allure">Allure</span>
+            <span class="badge js">JavaScript</span>
         </div>
     </div>
-</div>
+</section>
+
+<!-- ===== OTHER PROJECTS ===== -->
+<section class="content-section" id="projectsSection">
+    <div class="section-inner">
+        <div class="section-tag">03 — PORTFOLIO</div>
+        <h2 class="section-title">Other Projects</h2>
+        <div class="projects-grid">
+            <a href="https://github.com/SergioUS/STARLINK-testing-project" target="_blank" class="project-card">
+                <div class="project-logo">🛰️</div>
+                <div class="project-info">
+                    <div class="project-name">STARLINK</div>
+                    <div class="project-sub">Testing Project</div>
+                </div>
+                <div class="project-arrow">→</div>
+            </a>
+            <a href="https://github.com/SergioUS/Tesla_testing_project" target="_blank" class="project-card">
+                <div class="project-logo">⚡</div>
+                <div class="project-info">
+                    <div class="project-name">Tesla</div>
+                    <div class="project-sub">Testing Project</div>
+                </div>
+                <div class="project-arrow">→</div>
+            </a>
+            <a href="https://github.com/SergioUS/X-AI-Testing-project" target="_blank" class="project-card">
+                <div class="project-logo">𝕏</div>
+                <div class="project-info">
+                    <div class="project-name">X-AI</div>
+                    <div class="project-sub">Testing Project</div>
+                </div>
+                <div class="project-arrow">→</div>
+            </a>
+            <a href="https://github.com/SergioUS/NASA_testing_project" target="_blank" class="project-card">
+                <div class="project-logo">🚀</div>
+                <div class="project-info">
+                    <div class="project-name">NASA</div>
+                    <div class="project-sub">Testing Project</div>
+                </div>
+                <div class="project-arrow">→</div>
+            </a>
+            <a href="https://github.com/SergioUS/Apple-and-X-AI-testing-project" target="_blank" class="project-card">
+                <div class="project-logo">🍎</div>
+                <div class="project-info">
+                    <div class="project-name">Apple & X-AI</div>
+                    <div class="project-sub">Testing Project</div>
+                </div>
+                <div class="project-arrow">→</div>
+            </a>
+            <a href="https://github.com/SergioUS/Blue-Origin-and-X-AI-testing-project" target="_blank" class="project-card">
+                <div class="project-logo">🌊</div>
+                <div class="project-info">
+                    <div class="project-name">Blue Origin & X-AI</div>
+                    <div class="project-sub">Testing Project</div>
+                </div>
+                <div class="project-arrow">→</div>
+            </a>
+            <a href="https://github.com/SergioUS/Open-AI-testing-project" target="_blank" class="project-card">
+                <div class="project-logo">🤖</div>
+                <div class="project-info">
+                    <div class="project-name">Open AI</div>
+                    <div class="project-sub">Testing Project</div>
+                </div>
+                <div class="project-arrow">→</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="content-section dark" id="teamSection">
+    <div class="section-inner">
+        <div class="section-tag">04 — TEAM</div>
+        <h2 class="section-title">Die Mannschaft</h2>
+
+        <!-- LEADS -->
+        <div class="team-label">Leadership</div>
+        <div class="team-leads">
+            <div class="team-card lead">
+                <div class="team-avatar-wrap">
+                    <img src="https://github.com/SergioUS.png" alt="Sergey Efremov" class="team-avatar"/>
+                </div>
+                <div class="team-name">Sergey Efremov</div>
+                <div class="team-role">Project Manager</div>
+                <div class="team-codename">· Fahrwerk ·</div>
+                <div class="team-links">
+                    <a href="https://github.com/SergioUS" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/sefremoff/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card lead">
+                <div class="team-avatar-wrap">
+                    <img src="https://serinegit.github.io/Blue-Origin-and-X-AI-project-page/img/team/Tatsiana.jpg" alt="Tatsiana Lentz" class="team-avatar"/>
+                </div>
+                <div class="team-name">Tatsiana Lentz</div>
+                <div class="team-role">Team Lead</div>
+                <div class="team-codename">· Boxster ·</div>
+                <div class="team-links">
+                    <a href="https://github.com/TatsianaLentz" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/tatsianalentz/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card lead">
+                <div class="team-avatar-wrap">
+                    <img src="https://github.com/SerineGit.png" alt="Serine Zargaryan" class="team-avatar"/>
+                </div>
+                <div class="team-name">Serine Zargaryan</div>
+                <div class="team-role">Tech Lead</div>
+                <div class="team-codename">· Carrera S ·</div>
+                <div class="team-links">
+                    <a href="https://github.com/SerineGit" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/serinezargaryan/" target="_blank">LI</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ENGINEERS -->
+        <div class="team-label" style="margin-top:60px;">QA Pit Lane Engineers</div>
+        <div class="team-engineers">
+            <div class="team-card eng">
+                <div class="team-avatar-wrap small">
+                    <img src="https://avatars.githubusercontent.com/u/257557127?v=4" alt="Andrew Marchuk" class="team-avatar"/>
+                </div>
+                <div class="team-name">Andrew Marchuk</div>
+                <div class="team-links">
+                    <a href="https://github.com/atsservicegroup-hub" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/andrew-marchuk/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card eng">
+                <div class="team-avatar-wrap small">
+                    <img src="https://avatars.githubusercontent.com/LanSvet" alt="Lana Chovhan" class="team-avatar"/>
+                </div>
+                <div class="team-name">Lana Chovhan</div>
+                <div class="team-links">
+                    <a href="https://github.com/LanSvet" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/lana-chovgan/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card eng">
+                <div class="team-avatar-wrap small">
+                    <img src="https://avatars.githubusercontent.com/lindaremizova-lab" alt="Linda Remizova" class="team-avatar"/>
+                </div>
+                <div class="team-name">Linda Remizova</div>
+                <div class="team-links">
+                    <a href="https://github.com/lindaremizova-lab" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/lindaremizova/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card eng">
+                <div class="team-avatar-wrap small">
+                    <img src="https://avatars.githubusercontent.com/aaaa8a9" alt="Mila Sushchuk" class="team-avatar"/>
+                </div>
+                <div class="team-name">Mila Sushchuk</div>
+                <div class="team-links">
+                    <a href="https://github.com/aaaa8a9" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/sushmila/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card eng">
+                <div class="team-avatar-wrap small">
+                    <img src="https://avatars.githubusercontent.com/moonbek" alt="Oybek Tashpulatov" class="team-avatar"/>
+                </div>
+                <div class="team-name">Oybek Tashpulatov</div>
+                <div class="team-links">
+                    <a href="https://github.com/moonbek" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/oybek-tashpulatov/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card eng">
+                <div class="team-avatar-wrap small">
+                    <img src="https://avatars.githubusercontent.com/polianinevgenii" alt="Evgenii Polianin" class="team-avatar"/>
+                </div>
+                <div class="team-name">Evgenii Polianin</div>
+                <div class="team-links">
+                    <a href="https://github.com/polianinevgenii" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/evgenii-polianin/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card eng">
+                <div class="team-avatar-wrap small">
+                    <img src="https://avatars.githubusercontent.com/SBorovich" alt="Sergiy Borovich" class="team-avatar"/>
+                </div>
+                <div class="team-name">Sergiy Borovich</div>
+                <div class="team-links">
+                    <a href="https://github.com/SBorovich" target="_blank">GH</a>
+                    <a href="https://www.linkedin.com/in/sergiy-borovich/" target="_blank">LI</a>
+                </div>
+            </div>
+            <div class="team-card eng placeholder">
+                <div class="team-avatar-wrap small">
+                    <div class="team-avatar placeholder-avatar">?</div>
+                </div>
+                <div class="team-name">Julia</div>
+                <div class="team-role" style="font-size:11px;color:#555">coming soon</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="footer-logo">✦ StarKi</span>
+            <span class="footer-tagline">Design & Creative Direction</span>
+        </div>
+        <div class="footer-center">
+            <span class="footer-copy">Zero Defects. Full Throttle. Every Sprint.</span>
+            <span class="footer-year">2025–2026</span>
+        </div>
+        <div class="footer-right">
+            <a href="https://github.com/SerineGit" target="_blank" class="footer-gh-link">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                github.com/SerineGit
+            </a>
+        </div>
+    </div>
+</footer>
 
 <script src="script.js"></script>
-    
-
 </body>
 </html>
