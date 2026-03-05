@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
 
 
+:root {
+    --red: #ff4500;
+    --red-soft: #ff6347;
+    --red-glow: rgba(255,69,0,0.35);
+    --bg-dark: #080808;
+    --bg-mid: #111111;
+    --bg-light: #161616;
+    --text: #e8e8e8;
+    --text-muted: #888;
+    --border: rgba(255,69,0,0.2);
+}
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
